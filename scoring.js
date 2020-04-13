@@ -12,7 +12,7 @@ $(document).ready(function(){
                           ];
     // 変数「sum」に
     // [国語の点数,英語の点数,数学の点数,理科の点数,社会の点数]をそれぞれ足します。
-    // ヒント! 配列を一つづつ取り出して足していきます。    
+    // ヒント! 配列を一つづつ取り出して足していきます。
     //追加課題１の内容を採用
     let sum = subject_points.reduce(function(accumulated_num,element_num){
       return accumulated_num + element_num;
@@ -68,17 +68,17 @@ $(document).ready(function(){
     // ヒント! 「javascript 点数 合格 不合格 ロジック」で検索してみてください。
     $('#judge').text(judge);
   };
-  
+
   // 最終的なジャッジのロジックを作ります。
   function judgement(){
     // 変数「achievement」に「get_achievement()の戻り値」を代入します。
     let achievement = get_achievement();
     // 変数「pass_or_failure」に「get_pass_or_failure()の戻り値」を代入します。
     let pass_or_failure = get_pass_or_failure();
-    
-    //追加課題2の内容を解決する処理("append"された属性値を用い、前回の"最終ジャッジ"の処理結果をここで削除。※初回の処理はスルーされる)
+
+    //追加課題2の内容を解決する処理(前回の"最終ジャッジ"の処理結果をここで削除。※初回の処理はスルーされる)
     $("#alert-indicate").remove();
-    
+
     // 「最終ジャッジ」(id="alert-indicate)ボタンを押したら「あなたの成績は${achievement}で${pass_or_failure}です」が出力される処理です。
     $('#declaration').append(`<label id="alert-indicate" class="alert alert-info">あなたの成績は${achievement}で${pass_or_failure}です</label>`);
   };
